@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nku.dao.BiliLogDao">
+<select id="cateFind" resultType="BiliLog">
+    select * from tb_cate where cate like #{cate}
+</select>
+<select id="videoFind" resultType="VideoLog">
+        select cate,videoName,up,bv,videoCoin from tb_video order by videoCoin desc;
+</select>
+<select id="upFind" resultType="UpLog">
+        select up,upView,updanmaku,upLike,upCoin,upCollect,upShare from tb_up order by upCoin desc;
+</select>
+</mapper>
